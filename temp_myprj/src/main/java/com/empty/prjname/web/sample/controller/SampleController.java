@@ -15,6 +15,7 @@ import com.empty.prjname.web.sample.vo.SampleVo;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -24,10 +25,16 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Controller
+@RequestMapping(value = "/web")
 public class SampleController {
 
     @Autowired
     SampleService sampleService;
+    
+//    @RequestMapping(value = "/", method = RequestMethod.GET)
+//    public String getMain() throws Exception {
+//        return "/index";
+//    }
     
     /**
      * @return

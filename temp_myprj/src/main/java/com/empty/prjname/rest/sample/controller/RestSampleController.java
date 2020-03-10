@@ -30,6 +30,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Api(value = "/rest", description = "샘플 컨트롤러")
+@RequestMapping(value = "/rest")
 @RestController
 public class RestSampleController {
 
@@ -41,7 +42,7 @@ public class RestSampleController {
     
 
     @ApiOperation(value="샘플 sample_page" ,notes="노트 영역입니다.")
-    @RequestMapping(value = "/rest/sample_page", method = RequestMethod.GET)
+    @RequestMapping(value = "/sample_page", method = RequestMethod.GET)
     public String getSample_page(ModelMap model) throws Exception  {
         
         SampleVo data  = new SampleVo();
@@ -59,7 +60,7 @@ public class RestSampleController {
         return "jsonView";
     }
     
-    @RequestMapping(value = "/rest/sample_page2", method = RequestMethod.GET)
+    @RequestMapping(value = "/sample_page2", method = RequestMethod.GET)
     public SampleVo getSample_page2() {
         
         ModelAndView model = new ModelAndView("jsonView");
@@ -78,7 +79,7 @@ public class RestSampleController {
         return data;
     }
     
-    @RequestMapping(value = "/rest/sample_page22", method = RequestMethod.GET)
+    @RequestMapping(value = "/sample_page22", method = RequestMethod.GET)
     public SampleVo getSample_page22(@Valid SampleVo sampleVo) {
         
         ModelAndView model = new ModelAndView("jsonView");
@@ -97,7 +98,7 @@ public class RestSampleController {
         return data;
     }
     
-    @RequestMapping(value = "/rest/sample_page3", method = RequestMethod.GET)
+    @RequestMapping(value = "/sample_page3", method = RequestMethod.GET)
     public DefaultJsonModelView getSample_page3() {
         
         DefaultJsonModelView model = new DefaultJsonModelView();
@@ -116,7 +117,7 @@ public class RestSampleController {
         return model;
     }
     
-    @RequestMapping(value = "/rest/sample_page4", method = RequestMethod.GET)
+    @RequestMapping(value = "/sample_page4", method = RequestMethod.GET)
     public DefaultJsonModelView getSample_page4() throws Exception {
         
         int ii =  1/0;
@@ -130,7 +131,7 @@ public class RestSampleController {
         return model;
     }
     
-    @RequestMapping(value = "/rest/sample_page5", method = RequestMethod.GET)
+    @RequestMapping(value = "/sample_page5", method = RequestMethod.GET)
     public SampleVo getSample_page5() throws Exception {
 //        try {
 //            int ii =  1/0;
