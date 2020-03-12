@@ -15,7 +15,7 @@
     
     <update id="updateTestAge">
         update test set age = age + 1
-        where id = 1
+        where idx = 1
     </update>
     
 </mapper>
