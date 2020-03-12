@@ -1,3 +1,6 @@
+
+create database office;
+
 CREATE TABLE `test` (
   `idx` bigint NOT NULL AUTO_INCREMENT COMMENT '인덱스',
   `name` varchar(100) NOT NULL,
