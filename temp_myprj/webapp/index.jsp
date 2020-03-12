@@ -12,6 +12,10 @@
 <title>Hello!!</title>
 </head>
 <body>
+
+<br>
+<a href="/web/sample/main" > 샘플 메인 페이지</a>
+
    <c:set var="serverPort" value="<%=request.getLocalPort()%>" />
    <br><br><br>
    web page<%=request.getLocalPort()%>

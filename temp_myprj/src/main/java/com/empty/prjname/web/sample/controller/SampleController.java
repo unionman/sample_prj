@@ -68,4 +68,36 @@ public class SampleController {
         
         return "/sample_page";
     }
+    
+    
+    @RequestMapping(value = "/sample/main", method = RequestMethod.GET)
+    public String getSampleMain(ModelMap model) throws Exception {
+        
+//        ModelAndView model = new ModelAndView();
+        log.debug("loggggggggggggg");
+        
+        List datas = sampleService.selectSampleInfo();
+        log.debug("test == {}", datas.size() );
+        
+        
+        model.addAttribute("currentTimeStamp", DateUtil.getCurrentTimeStamp() );
+        model.addAttribute("datas", datas );
+        
+        ObjectMapper objectMapper = new ObjectMapper();
+        SampleVo sampleVo = new SampleVo();
+        sampleVo.setAge(2);
+        sampleVo.setName("샘플");
+        
+        String jsonSampleVoStr = objectMapper.writeValueAsString(sampleVo);
+        log.debug(jsonSampleVoStr);
+        
+        String sampleVoJsonStr = "[{ \"id\":0,\"name\":\"샘플\",\"age\":2 },{ \"id\":0,\"name\":\"샘플\",\"age\":2 }]";
+        List<SampleVo> sampleVo2s = new ArrayList<SampleVo>();
+        sampleVo2s = objectMapper.readValue(sampleVoJsonStr, new TypeReference<List<SampleVo>>() {});
+        log.debug("{}", sampleVo2s.toString());        
+        
+        
+        return "/sample/main";
+    }
+    
 }
