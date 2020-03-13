@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="UTF-8" %>
+<%@ include file="/WEB-INF/views/include/common-include-doctype.jsp" %>
     
     
     <%-- footer 메뉴 --%>
@@ -9,7 +9,7 @@
             <tr>
                 <td>
                     footer 메뉴 입니다.<br>
-                    email : <%= request.getParameter("email") %><br>
+                    email : ${param.email }<br>
                     tel : <%= request.getParameter("tel") %><br>
                 </td>
             </tr>
